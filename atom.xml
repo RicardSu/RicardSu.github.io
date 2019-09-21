@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-08-31T21:07:44.000Z</updated>
+  <updated>2019-09-21T07:36:59.812Z</updated>
   <id>/</id>
   
   <author>
@@ -17,376 +17,121 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(10)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (10)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
+    <title>XML综合大作业</title>
+    <link href="/2019/09/21/fifth/"/>
+    <id>/2019/09/21/fifth/</id>
+    <published>2019-09-21T07:12:45.000Z</published>
+    <updated>2019-09-21T07:36:59.812Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      &lt;h1 id=&quot;XML综合大作业&quot;&gt;&lt;a href=&quot;#XML综合大作业&quot; class=&quot;headerlink&quot; title=&quot;XML综合大作业&quot;&gt;&lt;/a&gt;XML综合大作业&lt;/h1&gt;&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;合运用所学知识设计一个客户关系管理系统。&lt;br&gt;系统分析：&lt;br&gt;   最主要就是客户关系管理中的三个主要因素客户、产品和销售记录的增加、查看和修改。&lt;br&gt;   客户管理：可以查看客户资料、增加客户、修改客户资料。&lt;br&gt;
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="xml" scheme="/tags/xml/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(11)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (11)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
+    <title>基于eNSP的计算机网络实验(二)</title>
+    <link href="/2019/09/21/fourth/"/>
+    <id>/2019/09/21/fourth/</id>
+    <published>2019-09-21T07:12:37.000Z</published>
+    <updated>2019-09-21T07:29:50.493Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      &lt;h1 id=&quot;基于eNSP的计算机网络实验-二&quot;&gt;&lt;a href=&quot;#基于eNSP的计算机网络实验-二&quot; class=&quot;headerlink&quot; title=&quot;基于eNSP的计算机网络实验(二)&quot;&gt;&lt;/a&gt;基于eNSP的计算机网络实验(二)&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;本次实验的一下两个内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;基于trunk和access实现不同VLAN间通信(上一篇的第四个内容为使用了VLAN接口配置ip,所以能够实现不同VLAN间的通信，这里是另一个方法)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用hybrid端口实现两个二层交换机不同VLAN间的互通    &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="ensp" scheme="/tags/ensp/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(12)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (12)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
+    <title>基于eNSP的相关计算机网络实验</title>
+    <link href="/2019/09/21/third/"/>
+    <id>/2019/09/21/third/</id>
+    <published>2019-09-21T07:11:36.000Z</published>
+    <updated>2019-09-21T07:29:02.725Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      &lt;h1 id=&quot;基于eNSP的相关计算机网络实验&quot;&gt;&lt;a href=&quot;#基于eNSP的相关计算机网络实验&quot; class=&quot;headerlink&quot; title=&quot;基于eNSP的相关计算机网络实验&quot;&gt;&lt;/a&gt;基于eNSP的相关计算机网络实验&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp; 这个实验记录随着学习进度的进行不断进行更新，主要为基于华为eNSP环境下进行的熟悉计算机网络的相关实验，这个实验主要为熟悉掌握计算机网络的结构和工作原理，深入理解交换机、路由器、无限网络的工作原理，目前这个实验包括下面几个内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;单台PC机联通交换机的实验配置&lt;/li&gt;
+&lt;li&gt;单台交换机上使用VLAN来隔离PC&lt;/li&gt;
+&lt;li&gt;跨交换机实现不同VLAN的通信与隔离&lt;/li&gt;
+&lt;li&gt;不同VLAN间实现通信&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="ensp" scheme="/tags/ensp/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(13)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (13)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
+    <title>Windows10环境下安装双版本Python所遇到的坑</title>
+    <link href="/2019/09/21/second/"/>
+    <id>/2019/09/21/second/</id>
+    <published>2019-09-21T07:11:31.000Z</published>
+    <updated>2019-09-21T07:27:10.497Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      &lt;h2 id=&quot;前-言&quot;&gt;&lt;a href=&quot;#前-言&quot; class=&quot;headerlink&quot; title=&quot;前   言&quot;&gt;&lt;/a&gt;前   言&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;由于很多用Python编写的工具需要在不同版本下运行,我们需要在一台电脑内配置多个版本的python,因此我们要安装两个以上的python,下面是我在本台电脑上安装python2.7和python3.5所遇到的坑,其实之前已经安装过,但是安装位置不同导致文件很乱且环境变量也很乱,所以重新安装,在安装过程中遇到的坑和解决方法做如下记录。&lt;/p&gt;
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="坑" scheme="/tags/%E5%9D%91/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(14)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (14)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
+    <title>折柳のdiary</title>
+    <link href="/2019/09/21/first/"/>
+    <id>/2019/09/21/first/</id>
+    <published>2019-09-21T07:11:22.000Z</published>
+    <updated>2019-09-21T07:31:31.457Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      日常学习日记
     
     </summary>
     
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(15)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (15)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(16)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (16)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(2)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(3)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (3)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(4)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (4)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(5)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (5)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(6)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (6)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(7)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (7)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(8)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (8)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(9)/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本 (9)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura - 副本/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-08-31T21:07:44.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="日常学习日记" scheme="/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   

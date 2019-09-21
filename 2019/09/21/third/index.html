@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">基于eNSP的相关计算机网络实验 | 折柳</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘その折柳";
+  mashiro_option.author_name = "折柳";
+  mashiro_option.site_url = "https://asuna.wang";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0s";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://asuna.wang">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/RicardSu" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://github.com/RicardSu" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://github.com/RicardSu" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/su-zhe-liu/activities" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/su-zhe-liu/activities" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">折柳</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">基于eNSP的相关计算机网络实验</h1>
+            <p class="entry-census">折柳&nbsp;·&nbsp;2019-9-21&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h1 id="基于eNSP的相关计算机网络实验"><a href="#基于eNSP的相关计算机网络实验" class="headerlink" title="基于eNSP的相关计算机网络实验"></a>基于eNSP的相关计算机网络实验</h1><p>&emsp;&emsp; 这个实验记录随着学习进度的进行不断进行更新，主要为基于华为eNSP环境下进行的熟悉计算机网络的相关实验，这个实验主要为熟悉掌握计算机网络的结构和工作原理，深入理解交换机、路由器、无限网络的工作原理，目前这个实验包括下面几个内容：</p>
+<blockquote>
+<ul>
+<li>单台PC机联通交换机的实验配置</li>
+<li>单台交换机上使用VLAN来隔离PC</li>
+<li>跨交换机实现不同VLAN的通信与隔离</li>
+<li>不同VLAN间实现通信</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p>实操图如下       (#^_^#)<br><img src="/2019/05/13/TenthBlog/fuck1.JPG" alt="f"><br><img src="/2019/05/13/TenthBlog/fuck2.JPG" alt="f"></p>
+<h2 id="单台PC机联通交换机的实验配置"><a href="#单台PC机联通交换机的实验配置" class="headerlink" title="单台PC机联通交换机的实验配置"></a>单台PC机联通交换机的实验配置</h2><blockquote>
+<p>相关操作如下所示：</p>
+<blockquote>
+<ol>
+<li>进入系统视图</li>
+<li>交换机接口配置</li>
+<li>添加交换机虚拟ip</li>
+<li>尝试ping      </li>
+</ol>
+</blockquote>
+</blockquote>
+<p><img src="/2019/05/13/TenthBlog/a-1.JPG" alt="a"></p>
+<p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
+<pre><code class="s">The device is running!
+
+&lt;Huawei&gt;
+&lt;Huawei&gt;sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw1
+[sw1]
+May 14 2019 10:26:17-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 4, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]port link-type access
+[sw1-Ethernet0/0/1]
+May 14 2019 10:27:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]interface vlanif1
+[sw1-Vlanif1]ip address 10.10.10.6 255.255.255.0
+[sw1-Vlanif1]
+May 14 2019 10:28:58-08:00 sw1 %%01IFNET/4/LINK_STATE(l)[0]:The line protocol IP
+ on the interface Vlanif1 has entered the UP state.
+[sw1-Vlanif1]display currn
+May 14 2019 10:29:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 6, the c
+hange loop count is 0, and the maximum number of records is 409
+#
+sysname sw1
+#
+cluster enable
+ntdp enable
+ndp enable
+#
+drop illegal-mac alarm
+#
+diffserv domain default
+#
+drop-profile default
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+#
+interface Vlanif1
+ ip address 10.10.10.6 255.255.255.0
+
+[sw1-Vlanif1] User interface con0 is available
+</code></pre>
+<p><img src="/2019/05/13/TenthBlog/a-2.jpg" alt="a"></p>
+<p><img src="/2019/05/13/TenthBlog/a-3.png" alt="a"></p>
+<hr>
+<h2 id="单台交换机上使用VLAN来隔离PC"><a href="#单台交换机上使用VLAN来隔离PC" class="headerlink" title="单台交换机上使用VLAN来隔离PC"></a>单台交换机上使用VLAN来隔离PC</h2><blockquote>
+<p> 相关操作如下所示：   </p>
+<blockquote>
+<ol>
+<li>在单台交换机上使用不同的vlan域来对进行PC隔离</li>
+<li>交换机端口配置</li>
+<li>配置PC的ip地址</li>
+<li>划分vlan区域       </li>
+</ol>
+</blockquote>
+</blockquote>
+<p><img src="/2019/05/13/TenthBlog/b-1.JPG" alt="b"><br>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
+<pre><code class="s">&lt;Huawei&gt;sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw1
+[sw1]vlan batch 10 20
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1]
+May 14 2019 10:33:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]port link-type access
+[sw1-Ethernet0/0/1]port default vlan 10
+[sw1-Ethernet0/0/1]
+May 14 2019 10:34:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 7, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]int e0/0/2
+[sw1-Ethernet0/0/2]port link-type access
+[sw1-Ethernet0/0/2]port default vlan 20
+[sw1-Ethernet0/0/2]
+May 14 2019 10:34:27-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 9, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/2]int e0/0/3
+[sw1-Ethernet0/0/3]port link-type access
+[sw1-Ethernet0/0/3]
+May 14 2019 10:34:47-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 10, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/3]port default vlan 10
+[sw1-Ethernet0/0/3]
+May 14 2019 10:34:53-08:00 sw1 %%01IFNET/4/IF_STATE(l)[0]:Interface Vlanif1 has 
+turned into DOWN state.
+May 14 2019 10:34:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 11, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/3] User interface con0 is available
+</code></pre>
+<p><img src="/2019/05/13/TenthBlog/b-2.png" alt="b"><br><img src="/2019/05/13/TenthBlog/b-3.png" alt="b"><br><img src="/2019/05/13/TenthBlog/b-4.png" alt="b"></p>
+<p>实现效果图如下所示：</p>
+<p><img src="/2019/05/13/TenthBlog/b-5.jpg" alt="b"></p>
+<hr>
+<h2 id="跨交换机实现不同VLAN的通信与隔离"><a href="#跨交换机实现不同VLAN的通信与隔离" class="headerlink" title="跨交换机实现不同VLAN的通信与隔离"></a>跨交换机实现不同VLAN的通信与隔离</h2><blockquote>
+<p> 相关操作如下所示：</p>
+<blockquote>
+<ol>
+<li>配置两台交换机的接口VLAN</li>
+<li>配置交换机与PC的端口连接</li>
+<li>配置交换机端口间的连接方式</li>
+<li>配置PC的ip地址</li>
+<li>验证PC机两两之间的连通性       </li>
+</ol>
+</blockquote>
+</blockquote>
+<p><img src="/2019/05/13/TenthBlog/c-1.JPG" alt="c">  </p>
+<p>&emsp;&emsp;在这里解释一下两台交换机之间进行的trunk，trunk是端口进行汇聚的意思，它允许交换机与交换机、交换机与路由器、主机与交换机或路由器之间通过两个或多个端口并行进行连接，同时传输来提供更高的带宽、更大的吞吐量，大幅度提高整个网络能力。VLAN trunk是指设置了多个VLAN之后，想通过一个端口来传输我们设置的多个VLAN，我们就需要在交换机这里设置这个端口为trunk。trunk技术使得一条物理线路可以传送多个VLAN的数据，更加具体的细节你想了解的话可以去查查资料。</p>
+<p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
+<pre><code class="s">&lt;Huawei&gt;sys 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw1
+[sw1]
+May 14 2019 10:38:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 4, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]port link-type access
+[sw1-Ethernet0/0/1]port default v
+May 14 2019 10:39:17-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+                                  ^
+Error:Incomplete command found at &#39;^&#39; position.
+[sw1-Ethernet0/0/1]q
+[sw1]
+[sw1]vlan batch 10 20
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]
+May 14 2019 10:39:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 6, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]port default vlan 10
+[sw1-Ethernet0/0/1]
+May 14 2019 10:39:47-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 7, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]int e0/0/2
+[sw1-Ethernet0/0/2]port link-type access
+[sw1-Ethernet0/0/2]port defa
+May 14 2019 10:40:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 8, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-port-group-defa]port default vlan 20
+[sw1-port-group-defa]q
+[sw1]
+May 14 2019 10:40:17-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 9, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/2
+[sw1-Ethernet0/0/2]port default vlan 20
+[sw1-Ethernet0/0/2]int e
+May 14 2019 10:40:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 10, the 
+change loop count is 0, and the maximum number of records is 4095.
+                   ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw1-Ethernet0/0/2]int e0/0/3
+[sw1-Ethernet0/0/3]port link-type trunk
+[sw1-Ethernet0/0/3]port trunk
+May 14 2019 10:43:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 11, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-port-group-trunk]port trunk allow-pass 
+May 14 2019 10:44:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 12, the 
+change loop count is 0, and the maximum number of records is 4095.
+                                            ^
+Error:Incomplete command found at &#39;^&#39; position.
+[sw1-port-group-trunk]q
+[sw1]int e0/0/3
+[sw1-Ethernet0/0/3]port trunk allow-pass vlan 10 20
+[sw1-Ethernet0/0/3]
+May 14 2019 10:44:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 13, the 
+change loop count is 0, and the maximum number of records is 4095.
+</code></pre>
+<p>另一个交换机的设置也是差不多的,这里就不展示了</p>
+<p><img src="/2019/05/13/TenthBlog/c-3.png" alt="c"><br><img src="/2019/05/13/TenthBlog/c-4.png" alt="c"><br><img src="/2019/05/13/TenthBlog/c-2.jpg" alt="c"></p>
+<hr>
+<h2 id="不同VLAN间实现通信"><a href="#不同VLAN间实现通信" class="headerlink" title="不同VLAN间实现通信"></a>不同VLAN间实现通信</h2><blockquote>
+<p>相关操作如下所示：</p>
+<blockquote>
+<ol>
+<li>交换机接口配置</li>
+<li>创建多个VLAN域</li>
+<li>设置PC的ip地址、网关配置       </li>
+</ol>
+</blockquote>
+</blockquote>
+<p><img src="/2019/05/13/TenthBlog/d-1.JPG" alt="d"></p>
+<p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
+<pre><code class="s">&lt;Huawei&gt;sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw1
+[sw1]
+May 14 2019 10:50:47-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 4, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]vlan batch 10 20
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1]
+May 14 2019 10:50:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]port link-type access
+[sw1-Ethernet0/0/1]
+May 14 2019 10:51:17-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 6, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]port default vlan 10
+[sw1-Ethernet0/0/1]int
+May 14 2019 10:51:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 7, the c
+hange loop count is 0, and the maximum number of records is 4095.
+                   ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw1-Ethernet0/0/1]int e0/0/2
+[sw1-Ethernet0/0/2]port link-type access
+[sw1-Ethernet0/0/2]port 
+May 14 2019 10:51:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 8, the c
+hange loop count is 0, and the maximum number of records is 4095.
+                        ^
+Error:Incomplete command found at &#39;^&#39; position.
+[sw1-Ethernet0/0/2]port default vlan 20
+[sw1-Ethernet0/0/2]
+May 14 2019 10:52:06-08:00 sw1 %%01IFNET/4/IF_STATE(l)[0]:Interface Vlanif1 has 
+turned into DOWN state.
+May 14 2019 10:52:07-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 9, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/2]int vlanif10
+[sw1-Vlanif10]
+May 14 2019 10:52:21-08:00 sw1 %%01IFNET/4/IF_STATE(l)[1]:Interface Vlanif10 has
+ turned into UP state.
+[sw1-Vlanif10]ip address 192.168.1.254 24
+[sw1-Vlanif10]
+May 14 2019 10:53:16-08:00 sw1 %%01IFNET/4/LINK_STATE(l)[2]:The line protocol IP
+ on the interface Vlanif10 has entered the UP state.
+May 14 2019 10:53:17-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 10, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-Vlanif10]int  vlanif20
+[sw1-Vlanif20]
+May 14 2019 10:53:28-08:00 sw1 %%01IFNET/4/IF_STATE(l)[3]:Interface Vlanif20 has
+ turned into UP state.
+[sw1-Vlanif20]ip address 192.168.2.254 24
+[sw1-Vlanif20]
+May 14 2019 10:53:57-08:00 sw1 %%01IFNET/4/LINK_STATE(l)[4]:The line protocol IP
+ on the interface Vlanif20 has entered the UP state.
+May 14 2019 10:53:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 11, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-Vlanif20]q
+[sw1]display ip interface brief
+*down: administratively down
+^down: standby
+(l): loopback
+(s): spoofing
+The number of interface that is UP in Physical is 3
+The number of interface that is DOWN in Physical is 2
+The number of interface that is UP in Protocol is 3
+The number of interface that is DOWN in Protocol is 2
+
+Interface                         IP Address/Mask      Physical   Protocol  
+MEth0/0/1                         unassigned           down       down      
+NULL0                             unassigned           up         up(s)     
+Vlanif1                           unassigned           down       down      
+Vlanif10                          192.168.1.254/24     up         up        
+Vlanif20                          192.168.2.254/24     up         up        
+[sw1]
+</code></pre>
+<p><img src="/2019/05/13/TenthBlog/d-2.png" alt="d"><br><img src="/2019/05/13/TenthBlog/d-3.jpg" alt="d"><br><img src="/2019/05/13/TenthBlog/d-4.jpg" alt="d"></p>
+<hr>
+<h2 id="以太网链路聚合"><a href="#以太网链路聚合" class="headerlink" title="以太网链路聚合"></a>以太网链路聚合</h2><pre><code class="s">The device is running!
+
+&lt;Huawei&gt;sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw1
+[sw1]vlan batch 10 20
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1]
+May 15 2019 13:18:09-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int e0/0/1
+[sw1-Ethernet0/0/1]port link-type access
+[sw1-Ethernet0/0/1]port default vlan 1
+May 15 2019 13:18:39-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 6, the c
+hange loop count is 0, and the maximum number of records is 4095.0
+[sw1-Ethernet0/0/1]port default vlan 10
+[sw1-Ethernet0/0/1]
+May 15 2019 13:18:49-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 7, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1-Ethernet0/0/1]int e0/0/2
+[sw1-Ethernet0/0/2]port link-type access
+[sw1-Ethernet0/0/2]port default vlan 20
+[sw1-Ethernet0/0/2]q
+[sw1]
+May 15 2019 13:19:09-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 9, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw1]int Eth-Trunk 1
+[sw1-Eth-Trunk1]port link-type trunk
+[sw1-Eth-Trunk1]port trunk allow-pas
+May 15 2019 13:19:49-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 10, the 
+change loop count is 0, and the maximum number of records is 4095.
+                                     ^
+Error:Incomplete command found at &#39;^&#39; position.
+[sw1-Eth-Trunk1]port trunk allow-pass vlan 10 20
+[sw1-Eth-Trunk1]
+May 15 2019 13:19:59-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 11, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw1-Eth-Trunk1]q
+[sw1]int g0/0/1
+[sw1-GigabitEthernet0/0/1]eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1-GigabitEthernet0/0/1]
+May 15 2019 13:20:20-08:00 sw1 %%01IFNET/4/IF_STATE(l)[0]:Interface Eth-Trunk1 h
+as turned into UP state.
+[sw1-GigabitEthernet0/0/1]int g0/0/
+May 15 2019 13:20:29-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 12, the 
+change loop count is 0, and the maximum number of records is 4095.
+                          ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw1-GigabitEthernet0/0/1]int g0/0/2
+[sw1-GigabitEthernet0/0/2]eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw1-GigabitEthernet0/0/2]
+</code></pre>
+<pre><code class="s">The device is running!
+
+&lt;Huawei&gt;sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname sw2
+[sw2]
+May 15 2019 13:21:39-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 4, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw2]vlan batch 10 20
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw2]
+May 15 2019 13:21:49-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 5, the c
+hange loop count is 0, and the maximum number of records is 4095.
+[sw2]int e0/0/1
+[sw2-Ethernet0/0/1]port link-type access
+[sw2-Ethernet0/0/1]port default vlan 10
+[sw2-Ethernet0/0/1]int
+May 15 2019 13:22:19-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 7, the c
+hange loop count is 0, and the maximum number of records is 4095.
+                   ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw2-Ethernet0/0/1]int e0/0/2
+[sw2-Ethernet0/0/2]port link-type access
+[sw2-Ethernet0/0/2]int
+May 15 2019 13:22:29-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 8, the c
+hange loop count is 0, and the maximum number of records is 4095.
+                   ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw2-Ethernet0/0/2]port default vlan 20
+[sw2-Ethernet0/0/2]
+May 15 2019 13:22:39-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 9, the c
+hange loop count is 0, and the maximum number of records is 4095.q
+[sw2]int Eth-trunk 1
+[sw2-Eth-Trunk1]port trunk allow-pass vlan 10 20
+                     ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw2-Eth-Trunk1]port link-type trunl
+                               ^
+Error: Unrecognized command found at &#39;^&#39; position.
+[sw2-Eth-Trunk1]port link-type trunk
+[sw2-Eth-Trunk1]port trunk allow-pass vlan 10 20
+[sw2-Eth-Trunk1]q
+[sw2]int g0/0/
+May 15 2019 13:25:19-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 11, the 
+change loop count is 0, and the maximum number of records is 4095.
+         ^
+Error: Wrong parameter found at &#39;^&#39; position.
+[sw2]int g0/0/1
+[sw2-GigabitEthernet0/0/1]eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw2-GigabitEthernet0/0/1]
+May 15 2019 13:25:34-08:00 sw2 %%01IFNET/4/IF_STATE(l)[0]:Interface Eth-Trunk1 h
+as turned into UP state.
+[sw2-GigabitEthernet0/0/1]
+May 15 2019 13:25:39-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 12, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw2-GigabitEthernet0/0/1]int g0/0/2
+[sw2-GigabitEthernet0/0/2]eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[sw2-GigabitEthernet0/0/2]
+May 15 2019 13:25:59-08:00 sw2 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
+.191.3.1 configurations have been changed. The current change number is 13, the 
+change loop count is 0, and the maximum number of records is 4095.
+[sw2-GigabitEthernet0/0/2]display eth-trunk 1
+Eth-Trunk1 s state information is:
+WorkingMode: NORMAL         Hash arithmetic: According to SIP-XOR-DIP         
+Least Active-linknumber: 1  Max Bandwidth-affected-linknumber: 8              
+Operate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+PortName                      Status      Weight 
+GigabitEthernet0/0/1          Up          1      
+GigabitEthernet0/0/2          Up          1      
+
+[sw2-GigabitEthernet0/0/2] User interface con0 is available
+Please Press ENTER.
+</code></pre>
+<h2 id="利用hybrid来实现"><a href="#利用hybrid来实现" class="headerlink" title="利用hybrid来实现"></a>利用hybrid来实现</h2><p>实验步骤<br>[sw1]vlan batch 5 10<br>[sw1]interface GigabitEthernet 0/0/1<br>[sw1-GigabitEthernet0/0/1]port hybrid pvid vlan 5   //确保该端口的入向数据打标签 valn5<br>[sw1-GigabitEthernet0/0/1]port hybrid untagged vlan 5  //确保交换机之间的链路转发数据出去时 携带标签vlan 5 为了让sw2识别</p>
+<p>[sw1]interface GigabitEthernet 0/0/24    </p>
+<h2 id="sw1-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-5"><a href="#sw1-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-5" class="headerlink" title="[sw1-GigabitEthernet0/0/24]port hybrid tagged vlan 5"></a>[sw1-GigabitEthernet0/0/24]port hybrid tagged vlan 5</h2><p>[sw1]interface GigabitEthernet 0/0/2<br>[sw1-GigabitEthernet0/0/2]port hybrid pvid vlan 10<br>[sw1-GigabitEthernet0/0/2]port hybrid untagged vlan 10</p>
+<p>[sw1]interface GigabitEthernet 0/0/24    </p>
+<h1 id="sw1-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-10"><a href="#sw1-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-10" class="headerlink" title="[sw1-GigabitEthernet0/0/24]port hybrid tagged vlan 10"></a>[sw1-GigabitEthernet0/0/24]port hybrid tagged vlan 10</h1><p>[sw2]vlan batch 5 10<br>[sw2]interface GigabitEthernet 0/0/3<br>[sw2-GigabitEthernet0/0/3]port hybrid pvid vlan 5<br>[sw2-GigabitEthernet0/0/3]port hybrid untagged vlan 5   //sw2收到后携带标签vlan 5 的数据后 将其拆除 在g0/0/3发出去 </p>
+<p>[sw2]interface GigabitEthernet 0/0/24    </p>
+<h2 id="sw2-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-5"><a href="#sw2-GigabitEthernet0-0-24-port-hybrid-tagged-vlan-5" class="headerlink" title="[sw2-GigabitEthernet0/0/24]port hybrid tagged vlan 5"></a>[sw2-GigabitEthernet0/0/24]port hybrid tagged vlan 5</h2><p>[sw2]interface GigabitEthernet 0/0/4<br>[sw2-GigabitEthernet0/0/4]port hybrid pvid vlan 10<br>[sw2-GigabitEthernet0/0/4]port hybrid untagged vlan 10    </p>
+<p>[sw2]interface GigabitEthernet 0/0/24<br>[sw2-GigabitEthernet0/0/24]port hybrid tagged vlan 10</p>
+<p>实验结果：<br> PC1–PC3互通  PC2–PC4互通</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>之后做完实验再写 Orz  </p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/09/21/fourth/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                基于eNSP的计算机网络实验(二)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/09/21/second/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Windows10环境下安装双版本Python所遇到的坑</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="asuna.wang" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="折柳" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="asuna.wang" itemprop="url" rel="author">折柳</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 折柳<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/RicardSu/CDN@1.0/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/RicardSu" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://asuna.wang/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://asuna.wang/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">RicardSu</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘その折柳</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/RicardSu" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://github.com/RicardSu" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="http://github.com/RicardSu" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer"
+
+    data-id="2660651585"
+
+    data-server="netease"
+
+    data-type="playlist"
+
+    data-fixed="true"
+
+    data-autoplay="false"
+
+    data-loop="all"
+
+    data-order="random"
+
+    data-preload="auto"
+
+    data-volume="0.7"
+
+    data-mutex="true"
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
