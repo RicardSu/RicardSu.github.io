@@ -429,7 +429,7 @@
 <h4 id="emsp-emsp-3-hybrid端口发报文："><a href="#emsp-emsp-3-hybrid端口发报文：" class="headerlink" title="&emsp;&emsp;3.hybrid端口发报文："></a>&emsp;&emsp;3.hybrid端口发报文：</h4><p>&emsp;&emsp;&emsp;&emsp;先判断该Vlan在本端口的属性:<br>&emsp;&emsp; &emsp;&emsp;1. 如果是untag则剥离Vlan信息，再发送； 相当于access<br>&emsp;&emsp;&emsp;&emsp; 2. 如果是tag则比较端口的PVID和将要发送报文的Vlan信息，如果两者相等则剥离  Vlan信息，再发送，否则报文将携带原有的Vlan标记进行转发。相当于trunk</p>
 <hr>
 <h2 id="基于trunk和access实现不同VLAN间通信"><a href="#基于trunk和access实现不同VLAN间通信" class="headerlink" title="基于trunk和access实现不同VLAN间通信"></a>基于trunk和access实现不同VLAN间通信</h2><p>&emsp;&emsp;这个实验的组网拓扑于表格内容如下所示：</p>
-<p><img src="/2019/05/18/EleventhBlog/3.JPG" alt="a"></p>
+<p><img src="/2019/09/21/fourth/3.JPG" alt="a"></p>
 <hr>
 <p>设备信息表格如下所示：</p>
 <table>
@@ -513,10 +513,10 @@ Enter system view, return user view with Ctrl+Z.
 </code></pre>
 <p>eNSP实验结果懒得截图了，反正就这样，设置都给了，你照着做绝对能够成功，不然就是你有问题，能够理解其实际流程最好，因为这样会让你对标签能够更好的理解。</p>
 <p>实际操作通过连接交换机和PC机、笔记本进行实验的截图如下:</p>
-<p><img src="/2019/05/18/EleventhBlog/a.PNG" alt="a">    </p>
+<p><img src="/2019/09/21/fourth/a.PNG" alt="a">    </p>
 <hr>
 <h2 id="使用hybrid端口实现两个二层交换机不同VLAN的互通"><a href="#使用hybrid端口实现两个二层交换机不同VLAN的互通" class="headerlink" title="使用hybrid端口实现两个二层交换机不同VLAN的互通"></a>使用hybrid端口实现两个二层交换机不同VLAN的互通</h2><p>&emsp;&emsp;这个实验的组网拓扑于表格内容如下所示：  </p>
-<p><img src="/2019/05/18/EleventhBlog/2.jpg" alt="a">  </p>
+<p><img src="/2019/09/21/fourth/2.jpg" alt="a">  </p>
 <p>设备信息表格懒得做了，有空再补。</p>
 <p>第一个交换机的脚本设置如下所示：</p>
 <pre><code class="s">&lt;Huawei&gt;
@@ -555,10 +555,10 @@ Info: This operation may take a few seconds. Please wait for a moment...done.
 [sw2-Ethernet0/0/2]
 </code></pre>
 <p>在ensp上的实验结果如下:    </p>
-<p><img src="/2019/05/18/EleventhBlog/1.jpg" alt="a">  </p>
+<p><img src="/2019/09/21/fourth/1.jpg" alt="a">  </p>
 <p>在实际操作设备中的实验结果如下：</p>
-<p><img src="/2019/05/18/EleventhBlog/b-2.PNG" alt="a"></p>
-<p><img src="/2019/05/18/EleventhBlog/b-5.PNG" alt="a">    </p>
+<p><img src="/2019/09/21/fourth/b-2.PNG" alt="a"></p>
+<p><img src="/2019/09/21/fourth/b-5.PNG" alt="a">    </p>
 
         </div>
         <!-- .entry-content -->

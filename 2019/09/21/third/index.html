@@ -412,7 +412,7 @@
 </ul>
 </blockquote>
 <a id="more"></a>
-<p>实操图如下       (#^_^#)<br><img src="/2019/05/13/TenthBlog/fuck1.JPG" alt="f"><br><img src="/2019/05/13/TenthBlog/fuck2.JPG" alt="f"></p>
+<p>实操图如下       (#^_^#)<br><img src="/2019/09/21/third/fuck1.JPG" alt="f"><br><img src="/2019/09/21/third/fuck2.JPG" alt="f"></p>
 <h2 id="单台PC机联通交换机的实验配置"><a href="#单台PC机联通交换机的实验配置" class="headerlink" title="单台PC机联通交换机的实验配置"></a>单台PC机联通交换机的实验配置</h2><blockquote>
 <p>相关操作如下所示：</p>
 <blockquote>
@@ -424,7 +424,7 @@
 </ol>
 </blockquote>
 </blockquote>
-<p><img src="/2019/05/13/TenthBlog/a-1.JPG" alt="a"></p>
+<p><img src="/2019/09/21/third/a-1.JPG" alt="a"></p>
 <p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
 <pre><code class="s">The device is running!
 
@@ -478,8 +478,8 @@ interface Vlanif1
 
 [sw1-Vlanif1] User interface con0 is available
 </code></pre>
-<p><img src="/2019/05/13/TenthBlog/a-2.jpg" alt="a"></p>
-<p><img src="/2019/05/13/TenthBlog/a-3.png" alt="a"></p>
+<p><img src="/2019/09/21/third/a-2.jpg" alt="a"></p>
+<p><img src="/2019/09/21/third/a-3.png" alt="a"></p>
 <hr>
 <h2 id="单台交换机上使用VLAN来隔离PC"><a href="#单台交换机上使用VLAN来隔离PC" class="headerlink" title="单台交换机上使用VLAN来隔离PC"></a>单台交换机上使用VLAN来隔离PC</h2><blockquote>
 <p> 相关操作如下所示：   </p>
@@ -492,7 +492,7 @@ interface Vlanif1
 </ol>
 </blockquote>
 </blockquote>
-<p><img src="/2019/05/13/TenthBlog/b-1.JPG" alt="b"><br>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
+<p><img src="/2019/09/21/third/b-1.JPG" alt="b"><br>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
 <pre><code class="s">&lt;Huawei&gt;sys
 Enter system view, return user view with Ctrl+Z.
 [Huawei]sysname sw1
@@ -531,9 +531,9 @@ May 14 2019 10:34:57-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
 change loop count is 0, and the maximum number of records is 4095.
 [sw1-Ethernet0/0/3] User interface con0 is available
 </code></pre>
-<p><img src="/2019/05/13/TenthBlog/b-2.png" alt="b"><br><img src="/2019/05/13/TenthBlog/b-3.png" alt="b"><br><img src="/2019/05/13/TenthBlog/b-4.png" alt="b"></p>
+<p><img src="/2019/09/21/third/b-2.png" alt="b"><br><img src="/2019/09/21/third/b-3.png" alt="b"><br><img src="/2019/09/21/third/b-4.png" alt="b"></p>
 <p>实现效果图如下所示：</p>
-<p><img src="/2019/05/13/TenthBlog/b-5.jpg" alt="b"></p>
+<p><img src="/2019/09/21/third/b-5.jpg" alt="b"></p>
 <hr>
 <h2 id="跨交换机实现不同VLAN的通信与隔离"><a href="#跨交换机实现不同VLAN的通信与隔离" class="headerlink" title="跨交换机实现不同VLAN的通信与隔离"></a>跨交换机实现不同VLAN的通信与隔离</h2><blockquote>
 <p> 相关操作如下所示：</p>
@@ -547,7 +547,7 @@ change loop count is 0, and the maximum number of records is 4095.
 </ol>
 </blockquote>
 </blockquote>
-<p><img src="/2019/05/13/TenthBlog/c-1.JPG" alt="c">  </p>
+<p><img src="/2019/09/21/third/c-1.JPG" alt="c">  </p>
 <p>&emsp;&emsp;在这里解释一下两台交换机之间进行的trunk，trunk是端口进行汇聚的意思，它允许交换机与交换机、交换机与路由器、主机与交换机或路由器之间通过两个或多个端口并行进行连接，同时传输来提供更高的带宽、更大的吞吐量，大幅度提高整个网络能力。VLAN trunk是指设置了多个VLAN之后，想通过一个端口来传输我们设置的多个VLAN，我们就需要在交换机这里设置这个端口为trunk。trunk技术使得一条物理线路可以传送多个VLAN的数据，更加具体的细节你想了解的话可以去查查资料。</p>
 <p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
 <pre><code class="s">&lt;Huawei&gt;sys 
@@ -620,7 +620,7 @@ May 14 2019 10:44:37-08:00 sw1 DS/4/DATASYNC_CFGCHANGE:OID 1.3.6.1.4.1.2011.5.25
 change loop count is 0, and the maximum number of records is 4095.
 </code></pre>
 <p>另一个交换机的设置也是差不多的,这里就不展示了</p>
-<p><img src="/2019/05/13/TenthBlog/c-3.png" alt="c"><br><img src="/2019/05/13/TenthBlog/c-4.png" alt="c"><br><img src="/2019/05/13/TenthBlog/c-2.jpg" alt="c"></p>
+<p><img src="/2019/09/21/third/c-3.png" alt="c"><br><img src="/2019/09/21/third/c-4.png" alt="c"><br><img src="/2019/09/21/third/c-2.jpg" alt="c"></p>
 <hr>
 <h2 id="不同VLAN间实现通信"><a href="#不同VLAN间实现通信" class="headerlink" title="不同VLAN间实现通信"></a>不同VLAN间实现通信</h2><blockquote>
 <p>相关操作如下所示：</p>
@@ -632,7 +632,7 @@ change loop count is 0, and the maximum number of records is 4095.
 </ol>
 </blockquote>
 </blockquote>
-<p><img src="/2019/05/13/TenthBlog/d-1.JPG" alt="d"></p>
+<p><img src="/2019/09/21/third/d-1.JPG" alt="d"></p>
 <p>&emsp;&emsp; 在eNSP上交换机的设置脚本如下所示：</p>
 <pre><code class="s">&lt;Huawei&gt;sys
 Enter system view, return user view with Ctrl+Z.
@@ -716,7 +716,7 @@ Vlanif10                          192.168.1.254/24     up         up
 Vlanif20                          192.168.2.254/24     up         up        
 [sw1]
 </code></pre>
-<p><img src="/2019/05/13/TenthBlog/d-2.png" alt="d"><br><img src="/2019/05/13/TenthBlog/d-3.jpg" alt="d"><br><img src="/2019/05/13/TenthBlog/d-4.jpg" alt="d"></p>
+<p><img src="/2019/09/21/third/d-2.png" alt="d"><br><img src="/2019/09/21/third/d-3.jpg" alt="d"><br><img src="/2019/09/21/third/d-4.jpg" alt="d"></p>
 <hr>
 <h2 id="以太网链路聚合"><a href="#以太网链路聚合" class="headerlink" title="以太网链路聚合"></a>以太网链路聚合</h2><pre><code class="s">The device is running!
 
